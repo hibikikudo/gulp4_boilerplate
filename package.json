@@ -53,7 +53,7 @@
     "imagemin-gifsicle": "5.2.0",
     "imagemin-jpegtran": "5.0.2",
     "imagemin-mozjpeg": "7.0.0",
-    "imagemin-pngquant": "5.1.0",
+    "imagemin-pngquant": "6.0.0",
     "imagemin-svgo": "6.0.0",
     "minimatch": "3.0.4",
     "postcss-assets": "5.0.0",
