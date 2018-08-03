@@ -19,58 +19,58 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
-    background: transparent;
-    border: 0;
-    font-size: 100%;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    vertical-align: baseline;
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
 }
 
 body {
-    line-height: 1;
+    line-height:1;
 }
 
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section {
-    display: block;
+    display:block;
 }
 
 nav ul {
-    list-style: none;
+    list-style:none;
 }
 
 blockquote, q {
-    quotes: none;
+    quotes:none;
 }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-    content: '';
+    content:'';
 }
 
 a {
-    background: transparent;
-    font-size: 100%;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
 }
 
 /* change colours to suit your needs */
 ins {
-    background-color: #ff9;
-    color: #000;
-    text-decoration: none;
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
 }
 
 /* change colours to suit your needs */
 mark {
-    background-color: #ff9;
-    color: #000; 
-    font-style: italic;
-    font-weight: bold;
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
 }
 
 del {
@@ -78,27 +78,27 @@ del {
 }
 
 abbr[title], dfn[title] {
-    border-bottom: 1px dotted;
-    cursor: help;
+    border-bottom:1px dotted;
+    cursor:help;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+    border-collapse:collapse;
+    border-spacing:0;
 }
 
 /* change border colour to suit your needs */
 hr {
-    border: 0;
-    border-top: 1px solid #ccc;
-    display: block;   
-    height: 1px;
-    margin: 1em 0;
-    padding: 0;
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
 }
 
 input, select {
-    vertical-align: middle;
+    vertical-align:middle;
 }
 
 /*!
@@ -137,10 +137,10 @@ button,
 select,
 optgroup,
 textarea {
-  font-family: inherit; // Remove the margin in Firefox and Safari
+  margin: 0; // Remove the margin in Firefox and Safari
+  font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-  margin: 0;
 }
 button,
 input {
@@ -164,8 +164,8 @@ button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
-  border-style: none;
   padding: 0;
+  border-style: none;
 }
 input[type="radio"],
 input[type="checkbox"] {
@@ -189,20 +189,18 @@ textarea {
   // Textareas should really only resize vertically so they don't break their (horizontal) containers.
   resize: vertical;
 }
-
 fieldset {
   // Browsers set a default `min-width: min-content;` on fieldsets,
   // unlike e.g. `<div>`s, which have `min-width: 0;` by default.
   // So we reset that to ensure fieldsets behave more like a standard block element.
   // See https://github.com/twbs/bootstrap/issues/12359
   // and https://html.spec.whatwg.org/multipage/#the-fieldset-and-legend-elements
-  border: 0;
-  // Reset the default outline behavior of fieldsets so they don't affect page layout.
-  margin: 0;
   min-width: 0;
+  // Reset the default outline behavior of fieldsets so they don't affect page layout.
   padding: 0;
+  margin: 0;
+  border: 0;
 }
-
 progress {
   vertical-align: baseline; // Add the correct vertical alignment in Chrome, Firefox, and Opera.
 }
@@ -220,6 +218,6 @@ progress {
 // 2. Change font properties to `inherit` in Safari.
 //
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; // 2
-  font: inherit; // 1
+  font: inherit; // 2
+  -webkit-appearance: button; // 1
 }

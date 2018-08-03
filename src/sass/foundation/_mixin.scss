@@ -1,12 +1,38 @@
 @mixin icon($img, $top: 0, $right: 0, $bottom: 0, $left: 0, $position: before) {
   &:#{$position} {
-      background-image: resolve($img);
-      background-position: center center;
-      background-repeat: no-repeat;
       content: '';
       display: inline-block;
+      background-image: resolve($img);
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: width($img);
       height: height($img);
       margin: $top $right $bottom $left;
-      width: width($img);
+  }
+}
+
+@mixin text-crop($line-height: 1.3, $top-adjustment: 0px, $bottom-adjustment: 0px) {
+  // Configured in Step 1
+  $top-crop: 9;
+  $bottom-crop: 8;
+  $crop-font-size: 36;
+  $crop-line-height: 1.2;
+  // Apply values to calculate em-based margins that work with any font size
+  $dynamic-top-crop: max(($top-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
+  $dynamic-bottom-crop: max(($bottom-crop + ($line-height - $crop-line-height) * ($crop-font-size / 2)), 0) / $crop-font-size;
+  // Mixin output
+  line-height: $line-height;
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+  }
+  &::before {
+    margin-bottom: calc(-#{$dynamic-top-crop}em + #{$top-adjustment});
+  }
+  &::after {
+    margin-top: calc(-#{$dynamic-bottom-crop}em + #{$bottom-adjustment});
   }
 }
