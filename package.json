@@ -60,7 +60,7 @@
     "postcss-clean": "1.1.0",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-sorting": "4.0.0",
-    "sass-lint-auto-fix": "0.14.2"
+    "sass-lint-auto-fix": "0.15.0"
   },
   "scripts": {
     "build": "gulp build",
