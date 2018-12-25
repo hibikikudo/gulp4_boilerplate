@@ -49,7 +49,7 @@
     "gulp-scss-lint": "0.7.2",
     "gulp-uglify": "3.0.1",
     "gulp-watch": "5.0.1",
-    "imagemin": "6.0.0",
+    "imagemin": "6.1.0",
     "imagemin-gifsicle": "6.0.1",
     "imagemin-jpegtran": "5.0.2",
     "imagemin-mozjpeg": "8.0.0",
