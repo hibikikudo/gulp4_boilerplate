@@ -74,8 +74,7 @@ const postcssOption = [
 // HTML整形
 function html() {
   return gulp
-    .src(paths.html.src)
-    .pipe(changed(paths.html.dest))
+    .src(paths.html.src, { since: LastRun(html)})
     .pipe(
       prettify({
         indent_char: ' ',
@@ -148,7 +147,7 @@ function scripts() {
 // 画像最適化
 const imageminOption = [
   pngquant({
-    quality: '70-85'
+    quality: '60-75'
   }),
   mozjpeg({
     quality: 85
