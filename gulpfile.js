@@ -27,7 +27,7 @@ const sass = require('gulp-sass');
 const scsslint = require('gulp-scss-lint');
 const sorting = require('postcss-sorting');
 const uglify = require('gulp-uglify');
-
+const watcher = require('gulp-watch');
 const paths = {
   root: './src',
   html: {
@@ -212,10 +212,9 @@ const browserSyncOption = {
   reloadDebounce: 500
 };
 gulp.task('browser-sync', () => {
-  browserSync.init(browserSyncOption);
-  gulp.watch(paths.styles.src, gulp.series(styles, browserSync.reload));
-  gulp.watch(paths.scripts.src, gulp.series(scripts, esLint, browserSync.reload));
-  gulp.watch(paths.html.src, gulp.series(html, browserSync.reload));
+  watcher(paths.styles.src, gulp.series(styles, browserSync.reload));
+  watcher(paths.scripts.src, gulp.series(scripts, esLint, browserSync.reload));
+  watcher(paths.nunjucks.src, gulp.series(html, browserSync.reload));
 });
 gulp.task('clean', cleanMapFiles);
 gulp.task('imagemin', images);
