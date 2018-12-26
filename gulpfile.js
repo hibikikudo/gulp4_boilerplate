@@ -4,7 +4,6 @@ const assets = require('postcss-assets');
 const autoprefixer = require('autoprefixer');
 const babel = require('gulp-babel');
 const browserSync = require('browser-sync').create();
-const changed = require('gulp-changed');
 const clean = require('postcss-clean');
 const concat = require('gulp-concat');
 const del = require('del');
@@ -28,7 +27,6 @@ const sass = require('gulp-sass');
 const scsslint = require('gulp-scss-lint');
 const sorting = require('postcss-sorting');
 const uglify = require('gulp-uglify');
-const watcher = require('gulp-watch');
 
 const paths = {
   root: './src',
@@ -74,7 +72,7 @@ const postcssOption = [
 // HTML整形
 function html() {
   return gulp
-    .src(paths.html.src, { since: LastRun(html)})
+    .src(paths.html.src, { since: gulp.lastRun(html)})
     .pipe(
       prettify({
         indent_char: ' ',
@@ -147,7 +145,7 @@ function scripts() {
 // 画像最適化
 const imageminOption = [
   pngquant({
-    quality: '60-75'
+    quality: '70-85'
   }),
   mozjpeg({
     quality: 85
@@ -215,9 +213,9 @@ const browserSyncOption = {
 };
 gulp.task('browser-sync', () => {
   browserSync.init(browserSyncOption);
-  watcher(paths.styles.src, gulp.series(styles, browserSync.reload));
-  watcher(paths.scripts.src, gulp.series(scripts, esLint, browserSync.reload));
-  watcher(paths.html.src, gulp.series(html, browserSync.reload));
+  gulp.watch(paths.styles.src, gulp.series(styles, browserSync.reload));
+  gulp.watch(paths.scripts.src, gulp.series(scripts, esLint, browserSync.reload));
+  gulp.watch(paths.html.src, gulp.series(html, browserSync.reload));
 });
 gulp.task('clean', cleanMapFiles);
 gulp.task('imagemin', images);
