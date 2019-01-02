@@ -21,13 +21,13 @@ const pngquant = require('imagemin-pngquant');
 const postcss = require('gulp-postcss');
 const prettify = require('gulp-prettify');
 const rename = require('gulp-rename');
+const reload = browserSync.reload;
 const replace = require('gulp-replace');
 const rollup = require('gulp-better-rollup');
 const sass = require('gulp-sass');
 const scsslint = require('gulp-scss-lint');
 const sorting = require('postcss-sorting');
 const uglify = require('gulp-uglify');
-const watcher = require('gulp-watch');
 const paths = {
   root: './src',
   html: {
@@ -209,28 +209,29 @@ const browserSyncOption = {
     index: 'index.html'
   },
   reloadOnRestart: true,
-  reloadDebounce: 500
+  //reloadDebounce: 500
 };
-gulp.task('browser-sync', () => {
-  watcher(paths.styles.src, gulp.series(styles, browserSync.reload));
-  watcher(paths.scripts.src, gulp.series(scripts, esLint, browserSync.reload));
-  watcher(paths.nunjucks.src, gulp.series(html, browserSync.reload));
-});
+function browsersync(done) {
+  browserSync.init(browserSyncOption);
+  done();
+}
+
+function watchFiles(done) {
+  const browserReload = () => {
+    browserSync.reload();
+    done();
+  };
+  gulp.watch(paths.styles.src).on('change', gulp.series(styles, browserReload));
+  gulp.watch(paths.scripts.src).on('change', gulp.series(scripts, esLint, browserReload));
+  gulp.watch(paths.html.src).on('change', gulp.series(html, browserReload));
+}
+
+gulp.task('default', gulp.series(gulp.parallel(scripts, styles, html), gulp.series(browsersync, watchFiles)));
+
 gulp.task('clean', cleanMapFiles);
 gulp.task('imagemin', images);
 gulp.task('sass-compress', sassCompress);
-gulp.task('server', gulp.series('browser-sync'));
-gulp.task(
-  'default',
-  gulp.series(gulp.parallel(scripts, styles, html), 'server')
-);
-gulp.task(
-  'build',
-  gulp.series(
-    gulp.parallel(scripts, 'imagemin', 'sass-compress', html),
-    'clean'
-  )
-);
+gulp.task('build', gulp.series(gulp.parallel(scripts, 'imagemin', 'sass-compress', html), 'clean'));
 gulp.task('eslint', esLint);
 gulp.task('html-lint', htmlLint);
 gulp.task('sass-lint', sassLint);
