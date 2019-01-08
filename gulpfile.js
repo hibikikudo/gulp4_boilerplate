@@ -21,7 +21,6 @@ const pngquant = require('imagemin-pngquant');
 const postcss = require('gulp-postcss');
 const prettify = require('gulp-prettify');
 const rename = require('gulp-rename');
-const reload = browserSync.reload;
 const replace = require('gulp-replace');
 const rollup = require('gulp-better-rollup');
 const sass = require('gulp-sass');
