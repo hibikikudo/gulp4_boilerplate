@@ -44,7 +44,7 @@
     "gulp-replace": "1.0.0",
     "gulp-reporter": "2.10.0",
     "gulp-sass": "4.0.2",
-    "gulp-scss-lint": "0.7.2",
+    "gulp-scss-lint": "1.0.0",
     "gulp-uglify": "3.0.1",
     "imagemin": "6.1.0",
     "imagemin-gifsicle": "6.0.1",
