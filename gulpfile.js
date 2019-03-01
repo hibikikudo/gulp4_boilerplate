@@ -23,7 +23,6 @@ const prettify = require('gulp-prettify');
 const rename = require('gulp-rename');
 const replace = require('gulp-replace');
 const sass = require('gulp-sass');
-const scsslint = require('gulp-scss-lint');
 const sorting = require('postcss-sorting');
 const uglify = require('gulp-uglify');
 const paths = {
@@ -123,7 +122,7 @@ function sassCompress() {
 function scripts() {
   return gulp
     .src(paths.scripts.src, { sourcemaps: true })
-    .pipe(order([paths.scripts.core, paths.scripts.app],{ base: './' }))
+    .pipe(order([paths.scripts.core, paths.scripts.app], { base: './' }))
     .pipe(
       babel({
         presets: ['@babel/env'],
@@ -176,14 +175,7 @@ function htmlLint() {
     .pipe(htmlhint())
     .pipe(htmlhint.reporter());
 }
-// SASS Lint
-function sassLint() {
-  return gulp.src(paths.styles.src).pipe(
-    scsslint({
-      config: 'scss-lint.yml',
-    }),
-  );
-}
+
 // ESLint
 function esLint() {
   return gulp
@@ -231,5 +223,4 @@ gulp.task('sass-compress', sassCompress);
 gulp.task('build', gulp.series(gulp.parallel(scripts, 'imagemin', 'sass-compress', html), 'clean'));
 gulp.task('eslint', esLint);
 gulp.task('html-lint', htmlLint);
-gulp.task('sass-lint', sassLint);
-gulp.task('test', gulp.series(sassLint, esLint, htmlLint));
+gulp.task('test', gulp.series(esLint, htmlLint));
