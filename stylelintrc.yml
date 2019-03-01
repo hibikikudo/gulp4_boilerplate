@@ -8,16 +8,18 @@ syntax:
 rules:
   at-rule-no-unknown: null
   scss/at-rule-no-unknown: true
+  at-rule-empty-line-before: "never" #@ルールの前に1行空けない
   at-rule-no-vendor-prefix: true # @ルールのベンタープリフィックス禁止
   font-family-name-quotes: "always-where-recommended" # 'font-family'はスペースで区切られたフォント名の場合クオートで囲む
   font-weight-notation: "named-where-possible" # 'font-weight'はnormalなどのキーワードが使える場合はそちらを使う（400はNG）
   function-url-quotes: "always" # 'url()'の引数はクオートで囲む
   media-feature-name-no-vendor-prefix: true # '@media'内のベンダープリフィックス禁止
   no-descending-specificity: null # 詳細度の高いセレクタより後に詳細度の低いセレクタを定義するのを許容
+  number-leading-zero: "never" #1以下の少数の値で、小数点の前に0を入れない
   property-no-vendor-prefix: true # プロパティのベンダープリフィックス禁止
+  rule-empty-line-before: "never" #ネストしたルールに改行を入れない
   selector-attribute-quotes: "always" # '[type=text]'などのセレクタの属性はクオートで囲む
   selector-no-vendor-prefix: true # セレクタのベンダープリフィックス禁止
+  string-quotes: "double" #ダブルクォーテーションを使用
   value-no-vendor-prefix: true # 値のベンダープリフィックス禁止
   value-list-comma-newline-after: "never-multi-line" # font-familyなどリストを改行しない
-  number-leading-zero: "never" #1以下の少数の値で、小数点の前に0を入れない
-  string-quotes: "double"
