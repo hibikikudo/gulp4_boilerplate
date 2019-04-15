@@ -58,7 +58,7 @@
     "postcss-sorting": "4.1.0",
     "stylelint": "9.10.1",
     "stylelint-config-recess-order": "2.0.1",
-    "stylelint-config-standard": "18.2.0",
+    "stylelint-config-standard": "18.3.0",
     "stylelint-scss": "3.5.4",
     "tunnel-agent": "0.6.0"
   },
