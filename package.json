@@ -27,7 +27,7 @@
     "browser-sync": "2.26.5",
     "del": "4.1.1",
     "eslint-plugin-jsx-a11y": "6.2.1",
-    "eslint-plugin-react": "7.12.4",
+    "eslint-plugin-react": "7.13.0",
     "gulp": "4.0.1",
     "gulp-babel": "8.0.0",
     "gulp-concat": "2.6.1",
