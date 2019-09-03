@@ -59,7 +59,7 @@
     "stylelint": "10.1.0",
     "stylelint-config-recess-order": "2.0.3",
     "stylelint-config-standard": "18.3.0",
-    "stylelint-scss": "3.9.2",
+    "stylelint-scss": "3.10.0",
     "tunnel-agent": "0.6.0"
   },
   "scripts": {
