@@ -47,7 +47,7 @@
     "gulp-uglify": "3.0.2",
     "imagemin": "7.0.1",
     "imagemin-gifsicle": "7.0.0",
-    "imagemin-jpegtran": "5.0.2",
+    "imagemin-jpegtran": "7.0.0",
     "imagemin-mozjpeg": "8.0.0",
     "imagemin-pngquant": "8.0.0",
     "imagemin-svgo": "8.0.0",
