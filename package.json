@@ -19,8 +19,8 @@
     "ie 11"
   ],
   "devDependencies": {
-    "@babel/core": "7.12.3",
-    "@babel/preset-env": "7.12.1",
+    "@babel/core": "7.12.10",
+    "@babel/preset-env": "7.12.11",
     "ajv": "7.0.3",
     "autoprefixer": "10.0.2",
     "babel-eslint": "10.1.0",
