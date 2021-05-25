@@ -50,7 +50,7 @@
     "imagemin-jpegtran": "7.0.0",
     "imagemin-mozjpeg": "9.0.0",
     "imagemin-pngquant": "9.0.1",
-    "imagemin-svgo": "8.0.0",
+    "imagemin-svgo": "9.0.0",
     "minimatch": "3.0.4",
     "postcss-assets": "5.0.0",
     "postcss-clean": "1.2.2",
