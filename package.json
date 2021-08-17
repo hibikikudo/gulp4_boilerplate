@@ -34,7 +34,7 @@
     "gulp-eslint": "6.0.0",
     "gulp-header": "2.0.9",
     "gulp-htmlhint": "4.0.1",
-    "gulp-imagemin": "7.1.0",
+    "gulp-imagemin": "8.0.0",
     "gulp-notify": "4.0.0",
     "gulp-order": "1.2.0",
     "gulp-plumber": "1.2.1",
