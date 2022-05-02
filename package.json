@@ -21,7 +21,7 @@
   "devDependencies": {
     "@babel/preset-env": "7.16.11",
     "@babel/core": "7.17.5",
-    "autoprefixer": "10.4.2",
+    "autoprefixer": "10.4.7",
     "ajv": "8.10.0",
     "babel-eslint": "10.1.0",
     "browser-sync": "2.27.8",
