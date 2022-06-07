@@ -22,7 +22,7 @@
     "@babel/preset-env": "7.18.2",
     "@babel/core": "7.18.2",
     "autoprefixer": "10.4.7",
-    "ajv": "8.10.0",
+    "ajv": "8.11.0",
     "babel-eslint": "10.1.0",
     "browser-sync": "2.27.9",
     "del": "6.0.0",
