@@ -23,7 +23,7 @@
     "@babel/core": "7.21.3",
     "autoprefixer": "10.4.13",
     "ajv": "8.12.0",
-    "@babel/eslint-parser": "7.11.0",
+    "@babel/eslint-parser": "7.21.3",
     "browser-sync": "2.29.1",
     "del": "7.0.0",
     "eslint-plugin-react": "7.31.11",
