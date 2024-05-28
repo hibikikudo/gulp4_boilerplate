@@ -56,7 +56,7 @@
     "postcss-clean": "1.2.2",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-sorting": "8.0.2",
-    "stylelint": "16.6.0",
+    "stylelint": "16.6.1",
     "stylelint-config-recess-order": "5.0.1",
     "stylelint-config-standard": "36.0.0",
     "stylelint-scss": "6.3.0",
