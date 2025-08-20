@@ -28,7 +28,7 @@
     "del": "8.0.0",
     "eslint-plugin-react": "7.34.2",
     "eslint-plugin-jsx-a11y": "6.8.0",
-    "gulp": "5.0.0",
+    "gulp": "5.0.1",
     "gulp-babel": "8.0.0",
     "gulp-concat": "2.6.1",
     "gulp-eslint": "6.0.0",
